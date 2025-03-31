@@ -1,54 +1,87 @@
-# React + TypeScript + Vite
+# PixelPerfect Image Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, web-based image editor built with React, TypeScript, and shadcn/ui. Allows users to upload images and perform basic editing tasks like background removal, cropping, and filter adjustments.
 
-Currently, two official plugins are available:
+**(Optional: Add a screenshot or GIF of the application here)**
+`[Screenshot/GIF of PixelPerfect in action]`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+* **Image Upload:** Upload images via drag & drop or file selection (supports PNG, JPG, JPEG).
+* **Background Removal:** Simple one-click removal of plain white backgrounds (makes them transparent).
+* **Interactive Cropping:** Visually select and apply a crop area with resize handles.
+* **Image Adjustments:** Fine-tune Brightness, Contrast, and Saturation using sliders.
+* **Undo Functionality:** Step back through editing history.
+* **Reset Options:** Reset adjustments to the original uploaded image or start fresh with a new image.
+* **Download:** Save the edited image as a PNG file.
+* **Theming:** Supports Light, Dark, and System themes.
+* **Responsive Design:** Adapts to different screen sizes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+* **Frontend Framework:** React
+* **Language:** TypeScript
+* **UI Components:** shadcn/ui (built on Radix UI & Tailwind CSS)
+* **Styling:** Tailwind CSS
+* **Icons:** Lucide React
+* **State Management:** React Hooks (`useState`, `useRef`, `useEffect`, `useContext`)
+
+## 📁 File Structure
+```
+.
+└── src/
+├── App.tsx             # Main application component
+└── components/
+├── GradientText.tsx    # Reusable component for gradient text style
+├── ImageEditor.tsx     # Core image editing interface and logic
+├── ImageUpload.tsx     # Initial image upload interface
+├── mode-toggle.tsx     # Theme switching dropdown component
+├── NavBar.tsx          # Top navigation bar
+├── theme-provider.tsx  # Context provider for theme management
+└── ui/                 # shadcn/ui components
+├── button.tsx
+├── card.tsx
+├── dropdown-menu.tsx
+├── label.tsx
+├── slider.tsx
+├── tabs.tsx
+├── toast.tsx
+└── toaster.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+* Node.js (v18 or later recommended)
+* npm, yarn, or pnpm package manager
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd pixelperfect # or your project directory name
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+### Running the Development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
+
+---
+
+Open your browser and navigate to http://localhost:5173
